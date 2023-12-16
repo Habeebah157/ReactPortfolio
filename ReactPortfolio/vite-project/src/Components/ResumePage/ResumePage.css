@@ -1,8 +1,5 @@
-iframe{
-    border:solid;
-    border-color: rgb(255, 24, 62);
-    padding: 20px;
-    margin: auto;
+
+.iframe{
+    border-color: brown;
     margin-top: 10px;
-    width: 50%;
 }

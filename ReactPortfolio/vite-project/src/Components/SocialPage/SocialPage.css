@@ -34,3 +34,17 @@
     width: 50%;
     float: right;
 }
+/* 766 */
+@media screen and (min-width:766px) {
+  
+    .linkedin-img{
+        width: 20%;
+        float: right;
+    }
+    .github-img{
+        width: 10%;
+        float: right;
+    }
+    
+    
+}

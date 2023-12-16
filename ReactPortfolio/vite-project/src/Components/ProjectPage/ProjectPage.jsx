@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../Navbar/Navbar'
 import { Octokit } from "@octokit/core"
+import './ProjectPage.css'
 
 const ProjectPage = () => {
 
   const [project, setProject] = useState([]);
   useEffect(()=>{
 
-    const octokit = new Octokit({auth: `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`})
+    const octokit = new Octokit({auth: `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`})
     const fetchProjects = async () => {
       try {
         const response = await octokit.request("GET /users/{owner}/repos", {
@@ -17,7 +18,7 @@ const ProjectPage = () => {
         for(let i = 0; i<response.data.length; i++){
             console.log(response.data[i].language); // You can handle the response data here
         }
-        console.log("YES",response.data[0].name)
+        console.log("YES",response.data)
 
         setProject(response.data)
        
@@ -33,7 +34,10 @@ const ProjectPage = () => {
     <>
     <Navbar/>
     {project.map(proj =>(
-      <li key={proj.name}>{proj.name}{<br></br>}{proj.language}</li>
+      <div className='project-container'>
+      <li className='project-name'key={proj.name}>{proj.name}{<br></br>}{proj.language}</li>
+      </div>
+   
     ))}
     
     </>

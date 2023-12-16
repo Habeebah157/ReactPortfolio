@@ -1,7 +1,7 @@
 const { Octokit, App } = require("octokit");
 
 const octokit = new Octokit({
-    auth: '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'
+    auth: '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'
 });
 async function run(){
 
@@ -22,4 +22,4 @@ async function run(){
 
 }
 run()
-
+console.log("HELLO")
