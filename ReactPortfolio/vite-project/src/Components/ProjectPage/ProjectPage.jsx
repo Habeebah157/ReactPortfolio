@@ -8,7 +8,7 @@ const ProjectPage = () => {
   const [project, setProject] = useState([]);
   useEffect(()=>{
 
-    const octokit = new Octokit({auth: `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`})
+    const octokit = new Octokit({auth: `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`})
     const fetchProjects = async () => {
       try {
         const response = await octokit.request("GET /users/{owner}/repos", {
@@ -35,7 +35,7 @@ const ProjectPage = () => {
     <Navbar/>
     {project.map(proj =>(
       <div className='project-container'>
-      <li className='project-name'key={proj.name}>{proj.name}{<br></br>}{proj.language}</li>
+      <li className='project-name'key={proj.name}><a href={proj.html_url} target='_blank'>{proj.name}</a>{<br></br>}{proj.language}</li>
       </div>
    
     ))}
